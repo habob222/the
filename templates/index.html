@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Status</title>
+    <style>
+        .healthy { background-color: green; color: white; padding: 10px; }
+        .lung_issue { background-color: red; color: white; padding: 10px; }
+        .diabetes { background-color: yellow; color: black; padding: 10px; }
+        .cancer { background-color: purple; color: white; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Health Status</h1>
+    <div id="status" class="status">
+        <!-- The status will be inserted here -->
+        <h2>Status: <span id="status-text"></span></h2>
+    </div>
+
+    <script>
+        // Fetch the sensor status from Flask
+        fetch('/status')
+            .then(response => response.json())
+            .then(data => {
+                const statusText = data.status;
+                const statusElement = document.getElementById('status');
+                const statusTextElement = document.getElementById('status-text');
+                
+                // Update the status text and background color based on the sensor data
+                statusTextElement.textContent = statusText;
+                
+                if (statusText === 'healthy') {
+                    statusElement.className = 'healthy';
+                } else if (statusText === 'lung_issue') {
+                    statusElement.className = 'lung_issue';
+                } else if (statusText === 'diabetes') {
+                    statusElement.className = 'diabetes';
+                } else if (statusText === 'cancer') {
+                    statusElement.className = 'cancer';
+                }
+            })
+            .catch(error => console.error('Error fetching status:', error));
+    </script>
+</body>
+</html>

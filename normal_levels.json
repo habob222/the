@@ -1,0 +1,15 @@
+{
+      "Alcohol": {"range": [0.0, 2.0]},
+      "Acetone": {"range": [0.3, 1.8]},
+      "Isopropanol": {"range": [0.0, 0.2]},
+      "Hexane": {"range": [0.0, 0.03]},
+      "Methanol": {"range": [0.4, 2.0]},
+      "CO": {"range": [0.0, 2.0]},
+      "Methane": {"range": [1.0, 2.0]},
+      "Propane": {"range": [0.0, 0.01]},
+      "Butane": {"range": [0.0, 0.01]},
+      "Benzene": {"range": [0.0, 0.03]},
+      "Toluene": {"range": [0.0, 0.01]},
+      "Ammonia": {"range": [0.3, 0.8]},
+      "NO2": {"range": [0.0, 0.0]}
+}
